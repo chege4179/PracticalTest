@@ -2,6 +2,7 @@ package com.example.practicaltest.ui.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -24,14 +25,16 @@ fun ProductCard(
     image: Int,
     title: String,
     price: String,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onClick:() -> Unit,
 ) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
             .wrapContentHeight()
-//            .padding(top = 8.dp)
-            .background(Color.White),
+            .background(Color.White)
+            .clickable(onClick = onClick)
+        ,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(

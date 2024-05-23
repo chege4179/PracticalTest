@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-data class ScreenState(
+data class AllProductsScreenState(
     val posts: List<Post> = emptyList()
 )
 
@@ -21,7 +21,7 @@ class AllProductsScreenViewModel @Inject constructor(
     private val postRepository: PostRepository
 ) : ViewModel() {
 
-    private val _uiState = MutableStateFlow(ScreenState())
+    private val _uiState = MutableStateFlow(AllProductsScreenState())
     val uiState = _uiState.asStateFlow()
 
     fun fetchProduct() {

@@ -25,8 +25,9 @@ fun AppNavigation() {
         composable(route = Screens.LOGIN_SCREEN,) {
             LoginScreen(navController = navController)
         }
-        composable(route = Screens.PRODUCT_SCREEN,) {
-            ProductScreen(navController = navController)
+        composable(route = Screens.PRODUCT_SCREEN + "/{id}") {
+            val id = it.arguments?.getString("id") ?:""
+            ProductScreen(navController = navController,id = id)
         }
         composable(route = Screens.ALL_PRODUCTS_SCREEN) {
             AllProductScreen(navController = navController)
