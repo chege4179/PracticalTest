@@ -151,7 +151,7 @@ fun AllProductsScreenContent(
             ) {
                 items(items = uiState.posts) { item ->
                     ProductCard(
-                        image = R.drawable.login,
+                        image = "https://picsum.photos/200/30${item.id}",
                         title = item.title,
                         price = item.body.take(10),
                         modifier = Modifier.padding(4.dp),
